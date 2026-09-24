@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal portfolio of Jazmin Landicho, a Computer Science undergraduate, aspiring software engineer, and aspiring data analyst.">
-    <meta name="theme-color" content="#0f5f55">
+    <meta name="theme-color" content="#7b3fa3">
     <title>Jazmin Landicho | Software Engineer & Data Analyst</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,13 @@
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="ambient-layer" aria-hidden="true">
+        <span class="ambient-orb ambient-orb-one"></span>
+        <span class="ambient-orb ambient-orb-two"></span>
+        <span class="ambient-orb ambient-orb-three"></span>
+        <span class="ambient-grid"></span>
+    </div>
 
     <header class="site-header" data-header>
         <div class="dashboard-nav shell">
@@ -89,13 +96,21 @@
                     <div class="profile-row">
                         <div class="profile-photo">
                             <span aria-hidden="true">JL</span>
-                            <!-- Save the uploaded portrait as profile-picture.jpg in this folder. -->
+                            <!-- Profile portrait supplied by Jazmin. -->
                             <img src="profile-picture.jpg" alt="Portrait of Jazmin Landicho" onerror="this.remove()">
                         </div>
                         <div>
                             <small>WELCOME TO MY PORTFOLIO</small>
                             <strong>Code + Data + Purpose</strong>
                         </div>
+                    </div>
+
+                    <div class="tech-ribbon" aria-hidden="true">
+                        <span class="tech-icon icon-python">Py</span>
+                        <span class="tech-icon icon-javascript">JS</span>
+                        <span class="tech-icon icon-php">PHP</span>
+                        <span class="tech-icon icon-html">&lt;&gt;</span>
+                        <span class="tech-icon icon-css">#</span>
                     </div>
 
                     <div class="code-panel" aria-hidden="true">
@@ -157,21 +172,23 @@
                     <div class="skills-grid">
                         <article class="skill-card">
                             <div class="skill-heading"><span>&lt;/&gt;</span><h4>Languages</h4></div>
-                            <ul>
-                                <li>Python</li>
-                                <li>JavaScript</li>
-                                <li>PHP</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
+                            <ul class="tech-list">
+                                <li><span class="tech-icon icon-python" aria-hidden="true">Py</span><span>Python</span></li>
+                                <li><span class="tech-icon icon-javascript" aria-hidden="true">JS</span><span>JavaScript</span></li>
+                                <li><span class="tech-icon icon-php" aria-hidden="true">PHP</span><span>PHP</span></li>
+                                <li><span class="tech-icon icon-html" aria-hidden="true">&lt;&gt;</span><span>HTML</span></li>
+                                <li><span class="tech-icon icon-css" aria-hidden="true">#</span><span>CSS</span></li>
                             </ul>
                         </article>
                         <article class="skill-card">
                             <div class="skill-heading"><span>⌁</span><h4>Tools, Practice &amp; Data Management</h4></div>
-                            <ul>
-                                <li>Git</li>
-                                <li>GitHub</li>
-                                <li>MySQL</li>
-                                <li>Supabase</li>
+                            <ul class="tech-list">
+                                <li><span class="tech-icon icon-git" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="8" cy="19" r="2"/><path d="M6 7v5a4 4 0 0 0 4 4h6M8 17v-1a4 4 0 0 1 4-4h6V9"/></svg>
+                                </span><span>Git</span></li>
+                                <li><span class="tech-icon icon-github" aria-hidden="true">GH</span><span>GitHub</span></li>
+                                <li><span class="tech-icon icon-mysql" aria-hidden="true">DB</span><span>MySQL</span></li>
+                                <li><span class="tech-icon icon-supabase" aria-hidden="true">⚡</span><span>Supabase</span></li>
                             </ul>
                         </article>
                     </div>

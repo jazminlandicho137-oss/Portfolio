@@ -8,6 +8,33 @@ const themeMeta = document.querySelector('meta[name="theme-color"]');
 const navigationLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* Pointer-reactive ambient background */
+if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+    let pointerFrame = 0;
+    let latestPointerEvent = null;
+
+    const paintPointerGlow = () => {
+        pointerFrame = 0;
+        if (!latestPointerEvent) return;
+
+        const horizontalOffset = (latestPointerEvent.clientX / window.innerWidth - 0.5) * 90;
+        const verticalOffset = (latestPointerEvent.clientY / window.innerHeight - 0.5) * 70;
+        document.documentElement.style.setProperty("--pointer-x", `${horizontalOffset}px`);
+        document.documentElement.style.setProperty("--pointer-y", `${verticalOffset}px`);
+    };
+
+    window.addEventListener("pointermove", (event) => {
+        latestPointerEvent = event;
+        if (!pointerFrame) pointerFrame = window.requestAnimationFrame(paintPointerGlow);
+    }, { passive: true });
+
+    document.documentElement.addEventListener("mouseleave", () => {
+        latestPointerEvent = null;
+        document.documentElement.style.setProperty("--pointer-x", "0px");
+        document.documentElement.style.setProperty("--pointer-y", "0px");
+    });
+}
+
 /* Mobile dashboard navigation */
 function setMenuState(isOpen) {
     if (!menuToggle || !navigation) return;
@@ -42,7 +69,7 @@ function getThemeLabel(theme) {
 function setTheme(theme, shouldSave = true) {
     document.documentElement.dataset.theme = theme;
     themeToggle?.setAttribute("aria-label", getThemeLabel(theme));
-    themeMeta?.setAttribute("content", theme === "dark" ? "#090f1b" : "#155f55");
+    themeMeta?.setAttribute("content", theme === "dark" ? "#130d19" : "#7b3fa3");
 
     if (shouldSave) {
         try {

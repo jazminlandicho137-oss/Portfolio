@@ -42,9 +42,9 @@ html[data-theme="dark"] {
     --surface: #1d1526;
     --surface-soft: #271b31;
     --surface-tint: #351c3d;
-    --text: #fbf2ff;
-    --text-soft: #d2c2db;
-    --muted: #a896b2;
+    --text: #fff9ff;
+    --text-soft: #e4d8e9;
+    --muted: #c3b3cc;
     --primary: #c88ce9;
     --primary-strong: #e2b5f6;
     --primary-soft: #efb6d8;
@@ -57,11 +57,11 @@ html[data-theme="dark"] {
     --panel-raised: #24162f;
     --panel-soft: #301e3b;
     --panel-line: rgba(255, 255, 255, 0.1);
-    --panel-muted: #bcaac5;
+    --panel-muted: #d8c8de;
     --code-bg: #150e1c;
     --code-raised: #21152a;
-    --code-text: #eadcf0;
-    --code-muted: #a58caf;
+    --code-text: #f0e4f4;
+    --code-muted: #c5b3ce;
     --code-line: #554061;
     --syntax: #ff80bd;
     --success: #62d598;
@@ -97,6 +97,84 @@ body {
 body.menu-open,
 body.chat-open {
     overflow: hidden;
+}
+
+main,
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Interactive ambient background */
+.ambient-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.ambient-orb {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    filter: blur(75px);
+    opacity: 0.24;
+    will-change: transform, translate;
+    translate: var(--pointer-x, 0px) var(--pointer-y, 0px);
+    transition: opacity 220ms ease;
+}
+
+.ambient-orb-one {
+    top: -12%;
+    left: -7%;
+    width: min(42vw, 620px);
+    aspect-ratio: 1;
+    background: var(--primary);
+    animation: ambient-float-one 18s ease-in-out infinite alternate;
+}
+
+.ambient-orb-two {
+    right: -13%;
+    bottom: -18%;
+    width: min(46vw, 680px);
+    aspect-ratio: 1;
+    background: var(--accent);
+    animation: ambient-float-two 22s ease-in-out infinite alternate;
+}
+
+.ambient-orb-three {
+    top: 38%;
+    left: 55%;
+    width: min(28vw, 430px);
+    aspect-ratio: 1;
+    background: var(--primary-soft);
+    opacity: 0.2;
+    animation: ambient-float-three 16s ease-in-out infinite alternate;
+}
+
+.ambient-grid {
+    position: absolute;
+    inset: -45px;
+    background-image: radial-gradient(color-mix(in srgb, var(--primary) 32%, transparent) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(ellipse at center, black 10%, transparent 73%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 10%, transparent 73%);
+    opacity: 0.22;
+    animation: grid-drift 24s linear infinite;
+}
+
+html[data-theme="dark"] .ambient-orb-one,
+html[data-theme="dark"] .ambient-orb-two {
+    opacity: 0.18;
+}
+
+html[data-theme="dark"] .ambient-orb-three {
+    opacity: 0.12;
+}
+
+html[data-theme="dark"] .ambient-grid {
+    opacity: 0.12;
 }
 
 ::selection {
@@ -219,7 +297,7 @@ h4 {
     border-radius: 13px 13px 13px 4px;
     box-shadow: 0 9px 25px rgba(11, 17, 32, 0.16);
     font-family: var(--font-mono);
-    font-size: 0.74rem;
+    font-size: 0.98rem;
     font-weight: 500;
     letter-spacing: -0.04em;
     transition: transform 180ms ease, background 180ms ease;
@@ -245,7 +323,7 @@ h4 {
     margin-top: 5px;
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 0.58rem;
+    font-size: 0.9rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
@@ -259,7 +337,7 @@ h4 {
 .nav-links > a:not(.nav-chat) {
     position: relative;
     color: var(--text-soft);
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
@@ -297,7 +375,7 @@ h4 {
     color: #ffffff;
     background: var(--navy);
     border-radius: 999px;
-    font-size: 0.72rem;
+    font-size: 0.98rem;
     font-weight: 700;
     transition: transform 180ms ease, background 180ms ease;
 }
@@ -419,7 +497,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .section-label {
     color: var(--primary);
     font-family: var(--font-mono);
-    font-size: 0.67rem;
+    font-size: 0.94rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -482,7 +560,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     border: 1px solid var(--border);
     border-radius: 999px;
     font-family: var(--font-mono);
-    font-size: 0.57rem;
+    font-size: 0.9rem;
     letter-spacing: 0.02em;
 }
 
@@ -507,7 +585,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     padding: 0 21px;
     border: 1px solid transparent;
     border-radius: 11px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 800;
     transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
@@ -561,11 +639,11 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding-inline: 14px;
-    color: #718096;
+    color: var(--muted);
     background: var(--surface-soft);
     border-radius: 14px;
     font-family: var(--font-mono);
-    font-size: 0.56rem;
+    font-size: 0.9rem;
 }
 
 .window-dots {
@@ -607,8 +685,8 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 
 .profile-photo {
     position: relative;
-    width: 66px;
-    height: 66px;
+    width: 76px;
+    height: 76px;
     display: grid;
     place-items: center;
     flex: 0 0 auto;
@@ -619,7 +697,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     border-radius: 17px 17px 17px 6px;
     box-shadow: 0 8px 22px color-mix(in srgb, var(--primary) 20%, transparent);
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 1rem;
 }
 
 .profile-photo img {
@@ -641,13 +719,32 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .chart-copy small {
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 0.48rem;
+    font-size: 0.88rem;
     letter-spacing: 0.07em;
 }
 
 .profile-row strong {
     margin-top: 2px;
     font-size: 0.93rem;
+}
+
+.tech-ribbon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 10px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+}
+
+.tech-ribbon .tech-icon {
+    width: 29px;
+    height: 29px;
+    border-radius: 7px;
+    box-shadow: none;
+    font-size: 0.78rem;
 }
 
 .code-panel {
@@ -667,7 +764,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--code-raised);
     border-bottom: 1px solid var(--code-line);
     font-family: var(--font-mono);
-    font-size: 0.5rem;
+    font-size: 0.86rem;
 }
 
 .panel-heading b {
@@ -681,7 +778,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     gap: 10px;
     padding-inline: 15px;
     font-family: var(--font-mono);
-    font-size: 0.62rem;
+    font-size: 0.92rem;
     line-height: 1.9;
 }
 
@@ -713,12 +810,12 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 
 .dashboard-stats strong {
     margin-block: 4px 2px;
-    font-size: 0.65rem;
+    font-size: 0.94rem;
 }
 
 .dashboard-stats span {
     color: var(--muted);
-    font-size: 0.49rem;
+    font-size: 0.88rem;
 }
 
 .chart-card {
@@ -732,7 +829,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     justify-content: space-between;
     margin-bottom: 11px;
     color: var(--text-soft);
-    font-size: 0.55rem;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
@@ -833,7 +930,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .about-note > span {
     color: var(--primary-soft);
     font-family: var(--font-mono);
-    font-size: 0.56rem;
+    font-size: 0.9rem;
     letter-spacing: 0.1em;
 }
 
@@ -850,7 +947,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     margin: 0;
     color: var(--panel-muted);
     font-family: var(--font-mono);
-    font-size: 0.55rem;
+    font-size: 0.9rem;
 }
 
 .subsection + .subsection {
@@ -911,7 +1008,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: color-mix(in srgb, var(--primary) 10%, transparent);
     border-radius: 10px;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.96rem;
 }
 
 .skill-heading h4 {
@@ -920,22 +1017,61 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 }
 
 .skill-card ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .skill-card li {
-    padding: 7px 10px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 9px;
     color: var(--text-soft);
     background: var(--surface-soft);
-    border-radius: 7px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
     font-family: var(--font-mono);
-    font-size: 0.61rem;
+    font-size: 0.92rem;
 }
+
+.tech-icon {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 6px 13px color-mix(in srgb, var(--primary) 15%, transparent);
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.tech-icon svg {
+    width: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
+.icon-python { background: linear-gradient(145deg, #5b8fc9, #ffd34e); color: #ffffff; text-shadow: 0 1px 2px #1c5480; }
+.icon-javascript { background: #f4d72d; color: #514600; }
+.icon-php { background: linear-gradient(145deg, #8d7bc4, #5c4e9e); }
+.icon-html { background: linear-gradient(145deg, #ff7850, #dc3f25); }
+.icon-css { background: linear-gradient(145deg, #55a9ed, #2162a5); }
+.icon-git { background: linear-gradient(145deg, #ff6b4a, #e23d2e); }
+.icon-github { background: linear-gradient(145deg, #49335d, #1c1424); }
+.icon-mysql { background: linear-gradient(145deg, #20a9c7, #006b87); }
+.icon-supabase { background: linear-gradient(145deg, #55d69b, #16875b); color: #102a20; }
 
 .timeline {
     position: relative;
@@ -1002,7 +1138,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     margin-bottom: 6px;
     color: var(--primary);
     font-family: var(--font-mono);
-    font-size: 0.54rem;
+    font-size: 0.88rem;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1018,7 +1154,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .timeline-content small {
     margin: 0;
     color: var(--muted);
-    font-size: 0.78rem;
+    font-size: 1rem;
 }
 
 .timeline-content small {
@@ -1026,7 +1162,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     margin-top: 8px;
     color: var(--primary);
     font-family: var(--font-mono);
-    font-size: 0.54rem;
+    font-size: 0.88rem;
 }
 
 .timeline-content small.honor-badge {
@@ -1043,7 +1179,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 
 .timeline-content small.honor-badge::before {
     content: "★";
-    font-size: 0.5rem;
+    font-size: 0.86rem;
 }
 
 .activity-grid {
@@ -1073,7 +1209,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .activity-number {
     color: var(--accent);
     font-family: var(--font-mono);
-    font-size: 0.62rem;
+    font-size: 0.92rem;
 }
 
 .activity-card h4 {
@@ -1084,7 +1220,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .activity-card p {
     margin: 0;
     color: var(--muted);
-    font-size: 0.79rem;
+    font-size: 1rem;
     line-height: 1.75;
 }
 
@@ -1097,7 +1233,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: color-mix(in srgb, var(--primary) 9%, transparent);
     border-radius: 999px;
     font-family: var(--font-mono);
-    font-size: 0.49rem;
+    font-size: 0.88rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
@@ -1128,7 +1264,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     padding-bottom: 18px;
     border-bottom: 1px solid var(--panel-line);
     font-family: var(--font-mono);
-    font-size: 0.53rem;
+    font-size: 0.88rem;
     letter-spacing: 0.08em;
 }
 
@@ -1151,7 +1287,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 
 .work-immersion-card > p {
     color: var(--panel-muted);
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.75;
 }
 
@@ -1169,7 +1305,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     position: relative;
     padding-left: 15px;
     color: var(--panel-muted);
-    font-size: 0.68rem;
+    font-size: 0.96rem;
 }
 
 .award-list li::before {
@@ -1215,7 +1351,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .leadership-card small {
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 0.52rem;
+    font-size: 0.88rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -1236,7 +1372,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .leadership-role p {
     margin: 0;
     color: var(--muted);
-    font-size: 0.75rem;
+    font-size: 0.98rem;
 }
 
 .past-roles {
@@ -1257,7 +1393,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     position: relative;
     padding-left: 15px;
     color: var(--text-soft);
-    font-size: 0.73rem;
+    font-size: 0.98rem;
 }
 
 .past-roles li::before {
@@ -1299,14 +1435,14 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .projects-heading > p {
     margin: 0 0 5px;
     color: var(--panel-muted);
-    font-size: 0.82rem;
+    font-size: 1rem;
     line-height: 1.8;
 }
 
 .projects-heading code {
     color: var(--primary-soft);
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.98rem;
 }
 
 .projects-grid {
@@ -1338,7 +1474,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     align-self: flex-end;
     color: color-mix(in srgb, var(--panel-muted) 65%, transparent);
     font-family: var(--font-mono);
-    font-size: 0.58rem;
+    font-size: 0.9rem;
 }
 
 .project-icon {
@@ -1402,7 +1538,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--primary-soft);
     border-radius: 50%;
     font-family: var(--font-mono);
-    font-size: 0.58rem;
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
@@ -1427,7 +1563,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     margin-bottom: 11px;
     color: var(--primary-soft);
     font-family: var(--font-mono);
-    font-size: 0.54rem;
+    font-size: 0.88rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -1441,7 +1577,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .project-card p {
     margin-bottom: 21px;
     color: var(--panel-muted);
-    font-size: 0.77rem;
+    font-size: 1rem;
     line-height: 1.75;
 }
 
@@ -1460,7 +1596,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--panel-soft);
     border-radius: 999px;
     font-family: var(--font-mono);
-    font-size: 0.49rem;
+    font-size: 0.88rem;
 }
 
 .project-link {
@@ -1469,7 +1605,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     gap: 9px;
     margin-top: auto;
     color: var(--primary-soft);
-    font-size: 0.7rem;
+    font-size: 0.96rem;
     font-weight: 800;
 }
 
@@ -1509,7 +1645,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .contact-copy > p {
     max-width: 590px;
     margin: 24px 0 28px;
-    color: #c0dbd5;
+    color: #f1d8e9;
     font-size: 0.9rem;
     line-height: 1.8;
 }
@@ -1520,7 +1656,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     gap: 11px;
     padding-bottom: 4px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.48);
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
@@ -1563,7 +1699,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--navy);
     border-radius: 9px;
     font-family: var(--font-mono);
-    font-size: 0.6rem;
+    font-size: 0.92rem;
     font-weight: 500;
 }
 
@@ -1580,14 +1716,14 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .contact-links small {
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 0.47rem;
+    font-size: 0.88rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
 .contact-links strong {
     overflow: hidden;
-    font-size: 0.7rem;
+    font-size: 0.96rem;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
@@ -1614,7 +1750,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.74rem;
+    font-size: 0.98rem;
     font-weight: 800;
 }
 
@@ -1627,7 +1763,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--navy);
     border-radius: 9px 9px 9px 3px;
     font-family: var(--font-mono);
-    font-size: 0.55rem;
+    font-size: 0.9rem;
 }
 
 .footer-inner p,
@@ -1636,7 +1772,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     margin: 0;
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 0.52rem;
+    font-size: 0.88rem;
 }
 
 .footer-inner > a:last-of-type {
@@ -1692,13 +1828,13 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 }
 
 .chat-launcher strong {
-    font-size: 0.69rem;
+    font-size: 0.96rem;
 }
 
 .chat-launcher small {
-    color: #91a0b3;
+    color: var(--panel-muted);
     font-family: var(--font-mono);
-    font-size: 0.46rem;
+    font-size: 0.88rem;
 }
 
 .chatbot {
@@ -1746,7 +1882,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--primary-soft);
     border-radius: 12px 12px 12px 4px;
     font-family: var(--font-mono);
-    font-size: 0.77rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -1768,13 +1904,13 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 }
 
 .chat-header strong {
-    font-size: 0.79rem;
+    font-size: 1rem;
 }
 
 .chat-header small {
-    color: #8f9caf;
+    color: var(--panel-muted);
     font-family: var(--font-mono);
-    font-size: 0.49rem;
+    font-size: 0.88rem;
 }
 
 .chat-header small i {
@@ -1821,8 +1957,8 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 }
 
 .message-avatar {
-    width: 26px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     display: grid;
     place-items: center;
     flex: 0 0 auto;
@@ -1830,7 +1966,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--primary-soft);
     border-radius: 7px 7px 7px 2px;
     font-family: var(--font-mono);
-    font-size: 0.49rem;
+    font-size: 0.66rem;
     font-weight: 500;
 }
 
@@ -1845,7 +1981,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 .message p {
     margin: 0;
     color: var(--text-soft);
-    font-size: 0.69rem;
+    font-size: 0.96rem;
     line-height: 1.65;
     white-space: pre-line;
 }
@@ -1855,7 +1991,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     margin-top: 5px;
     color: var(--muted);
     font-family: var(--font-mono);
-    font-size: 0.42rem;
+    font-size: 0.84rem;
 }
 
 .user-message {
@@ -1911,7 +2047,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: color-mix(in srgb, var(--primary) 8%, transparent);
     border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
     border-radius: 999px;
-    font-size: 0.54rem;
+    font-size: 0.88rem;
     font-weight: 700;
     cursor: pointer;
 }
@@ -1937,7 +2073,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     border: 1px solid var(--border);
     border-radius: 9px;
     outline: none;
-    font-size: 0.68rem;
+    font-size: 0.96rem;
 }
 
 .chat-form input:focus {
@@ -1979,7 +2115,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     color: var(--muted);
     background: var(--surface);
     font-family: var(--font-mono);
-    font-size: 0.43rem;
+    font-size: 0.84rem;
     text-align: center;
 }
 
@@ -1995,6 +2131,26 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     transform: translateY(0);
 }
 
+@keyframes ambient-float-one {
+    from { transform: translate3d(-3%, -2%, 0) scale(0.94); }
+    to { transform: translate3d(12%, 13%, 0) scale(1.12); }
+}
+
+@keyframes ambient-float-two {
+    from { transform: translate3d(4%, 8%, 0) scale(1.08); }
+    to { transform: translate3d(-14%, -10%, 0) scale(0.92); }
+}
+
+@keyframes ambient-float-three {
+    from { transform: translate3d(-10%, 7%, 0) scale(0.9); }
+    to { transform: translate3d(8%, -9%, 0) scale(1.16); }
+}
+
+@keyframes grid-drift {
+    from { background-position: 0 0; }
+    to { background-position: 52px 52px; }
+}
+
 @keyframes grow-bar {
     from { transform: scaleY(0); }
     to { transform: scaleY(1); }
@@ -2003,6 +2159,106 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 @keyframes typing {
     0%, 60%, 100% { opacity: 0.35; transform: translateY(0); }
     30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* Readability: enlarge supporting copy while preserving heading sizes */
+body {
+    font-size: 1.125rem;
+}
+
+.nav-links > a:not(.nav-chat),
+.nav-chat,
+.button,
+.dashboard-stats span,
+.about-note p,
+.skill-card li,
+.subsection-heading > p:last-child,
+.timeline-content p,
+.activity-card p,
+.work-immersion-card > p,
+.award-list li,
+.past-roles li,
+.project-tags li,
+.project-link,
+.footer-inner p,
+.footer-inner small,
+.footer-inner > a:last-of-type,
+.chat-form input {
+    font-size: 1.1rem;
+}
+
+.hero-overview {
+    font-size: clamp(1.18rem, 1.55vw, 1.38rem);
+}
+
+.about-copy p {
+    font-size: 1.18rem;
+}
+
+.about-copy .lead {
+    font-size: clamp(1.42rem, 2.2vw, 1.72rem);
+}
+
+.about-note blockquote {
+    font-size: 1.58rem;
+}
+
+.projects-heading > p,
+.project-card p,
+.contact-copy > p {
+    font-size: 1.18rem;
+}
+
+.email-highlight,
+.contact-links strong {
+    font-size: 1.12rem;
+}
+
+.message p {
+    font-size: 1.1rem;
+}
+
+.chat-prompts button {
+    font-size: 1rem;
+}
+
+.chat-form input {
+    font-size: 1.1rem;
+}
+
+.message time,
+.chat-note {
+    font-size: 0.98rem;
+}
+
+/* High-contrast corrections for dark mode */
+html[data-theme="dark"] .contact-wrap {
+    background: #4b216c;
+}
+
+html[data-theme="dark"] .contact-wrap .section-label,
+html[data-theme="dark"] .contact-wrap h2 span {
+    color: #f8c9e7;
+}
+
+html[data-theme="dark"] .button-primary:hover,
+html[data-theme="dark"] .nav-chat:hover,
+html[data-theme="dark"] .brand-button:hover .brand-mark,
+html[data-theme="dark"] .chat-form button,
+html[data-theme="dark"] .user-message .message-avatar,
+html[data-theme="dark"] .contact-platform.phone {
+    color: #24102f;
+}
+
+html[data-theme="dark"] .nav-chat:hover,
+html[data-theme="dark"] .brand-button:hover .brand-mark,
+html[data-theme="dark"] .chat-form button {
+    background: var(--primary);
+}
+
+html[data-theme="dark"] .chat-form button:hover {
+    background: var(--primary-strong);
+    color: #24102f;
 }
 
 /* Responsive */
@@ -2191,11 +2447,11 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     }
 
     .hero-overview {
-        font-size: 0.92rem;
+        font-size: 1.16rem;
     }
 
     .title-tags span {
-        font-size: 0.51rem;
+        font-size: 0.86rem;
     }
 
     .hero-actions {
@@ -2219,7 +2475,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 
     .code-line {
         padding-inline: 10px;
-        font-size: 0.53rem;
+        font-size: 1.02rem;
     }
 
     .section-heading h2,
@@ -2237,7 +2493,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     }
 
     .about-copy .lead {
-        font-size: 1.15rem;
+        font-size: 1.38rem;
     }
 
     .subsection + .subsection {
@@ -2325,7 +2581,7 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     }
 
     .footer-inner > a:last-of-type {
-        font-size: 0.48rem;
+        font-size: 0.88rem;
     }
 
     .chat-launcher {
