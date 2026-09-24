@@ -167,7 +167,7 @@ const fayriResponses = [
     },
     {
         keywords: ["how can i contact you", "how do i contact you", "contact you", "email you", "reach you"],
-        answer: "You can email me at jazminlandicho137@gmail.com. You can also find my LinkedIn, GitHub, Instagram, Facebook, and contact-number links in the Contact section once those placeholder URLs are replaced."
+        answer: "You can email me at jazminlandicho137@gmail.com. You can also find my LinkedIn, GitHub, Facebook, and contact-number links in the Contact section."
     }
 ];
 

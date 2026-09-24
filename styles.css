@@ -143,16 +143,6 @@ main,
     animation: ambient-float-two 22s ease-in-out infinite alternate;
 }
 
-.ambient-orb-three {
-    top: 38%;
-    left: 55%;
-    width: min(28vw, 430px);
-    aspect-ratio: 1;
-    background: var(--primary-soft);
-    opacity: 0.2;
-    animation: ambient-float-three 16s ease-in-out infinite alternate;
-}
-
 .ambient-grid {
     position: absolute;
     inset: -45px;
@@ -167,10 +157,6 @@ main,
 html[data-theme="dark"] .ambient-orb-one,
 html[data-theme="dark"] .ambient-orb-two {
     opacity: 0.18;
-}
-
-html[data-theme="dark"] .ambient-orb-three {
-    opacity: 0.12;
 }
 
 html[data-theme="dark"] .ambient-grid {
@@ -1525,33 +1511,6 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--accent);
 }
 
-.project-icon-objects {
-    gap: 12px;
-}
-
-.project-icon-objects span {
-    width: 55px;
-    height: 55px;
-    display: grid;
-    place-items: center;
-    color: var(--navy);
-    background: var(--primary-soft);
-    border-radius: 50%;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.project-icon-objects i {
-    position: absolute;
-    width: 4px;
-    background: color-mix(in srgb, var(--panel-muted) 38%, transparent);
-}
-
-.project-icon-objects i:nth-of-type(1) { height: 65px; transform: translate(-58px, 37px) rotate(38deg); }
-.project-icon-objects i:nth-of-type(2) { height: 65px; transform: translate(0, 37px); }
-.project-icon-objects i:nth-of-type(3) { height: 65px; transform: translate(58px, 37px) rotate(-38deg); }
-
 .project-card-copy {
     display: flex;
     flex: 1;
@@ -1703,7 +1662,6 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     font-weight: 500;
 }
 
-.contact-platform.instagram { background: linear-gradient(135deg, #8134af, #dc4778, #f5a742); }
 .contact-platform.facebook { background: #316ff5; }
 .contact-platform.phone { background: var(--primary); font-size: 0.85rem; }
 
@@ -2141,11 +2099,6 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     to { transform: translate3d(-14%, -10%, 0) scale(0.92); }
 }
 
-@keyframes ambient-float-three {
-    from { transform: translate3d(-10%, 7%, 0) scale(0.9); }
-    to { transform: translate3d(8%, -9%, 0) scale(1.16); }
-}
-
 @keyframes grid-drift {
     from { background-position: 0 0; }
     to { background-position: 52px 52px; }
@@ -2159,6 +2112,198 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
 @keyframes typing {
     0%, 60%, 100% { opacity: 0.35; transform: translateY(0); }
     30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* Minimal visual pass */
+:root,
+html[data-theme="dark"] {
+    --shadow: 0 8px 24px rgba(50, 20, 65, 0.08);
+    --shadow-soft: 0 3px 12px rgba(50, 20, 65, 0.06);
+}
+
+body {
+    background-image:
+        radial-gradient(circle at 14% 3%, rgba(211, 63, 153, 0.05), transparent 25%),
+        radial-gradient(rgba(83, 39, 111, 0.03) 1px, transparent 1px);
+}
+
+.ambient-orb {
+    filter: blur(105px);
+    opacity: 0.08;
+}
+
+.ambient-orb-one {
+    width: min(34vw, 480px);
+}
+
+.ambient-orb-two {
+    width: min(36vw, 520px);
+}
+
+.ambient-grid {
+    background-size: 32px 32px;
+    opacity: 0.09;
+}
+
+html[data-theme="dark"] .ambient-orb,
+html[data-theme="dark"] .ambient-grid {
+    opacity: 0.1;
+}
+
+.brand-mark,
+.button,
+.nav-chat,
+.lesson-card,
+.hero-dashboard,
+.skill-card,
+.timeline-content,
+.activity-card,
+.work-immersion-card,
+.leadership-card,
+.project-card,
+.contact-wrap {
+    box-shadow: none;
+}
+
+.brand-mark,
+.button,
+.nav-chat {
+    border-radius: 9px;
+}
+
+.brand-button:hover .brand-mark,
+.button:hover,
+.activity-card:hover,
+.project-card:hover {
+    transform: none;
+}
+
+.hero-dashboard {
+    transform: none;
+}
+
+.hero-dashboard::before,
+.leadership-card::after,
+.about-note::after {
+    display: none;
+}
+
+.profile-photo {
+    border-width: 2px;
+    border-radius: 11px 11px 11px 4px;
+    box-shadow: none;
+}
+
+.tech-icon {
+    box-shadow: none;
+}
+
+.about-note,
+.work-immersion-card,
+.leadership-card,
+.skill-card,
+.timeline-content,
+.activity-card,
+.project-card,
+.contact-wrap {
+    border-radius: 11px;
+}
+
+.about-note {
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.about-note > span,
+.work-card-top span {
+    color: var(--primary);
+}
+
+.about-note blockquote {
+    color: var(--text);
+}
+
+.about-note p,
+.work-card-top i,
+.work-immersion-card > p,
+.award-list li {
+    color: var(--muted);
+}
+
+.work-immersion-card {
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.work-card-top,
+.award-list {
+    border-color: var(--border);
+}
+
+.award-list li::before {
+    color: var(--accent);
+}
+
+.projects-section {
+    background: var(--bg);
+    border-block: 1px solid var(--border);
+}
+
+.projects-heading .section-label,
+.projects-heading h2 span,
+.projects-heading code,
+.project-type,
+.project-link {
+    color: var(--primary);
+}
+
+.projects-heading h2 {
+    color: var(--text);
+}
+
+.projects-heading > p,
+.project-card p {
+    color: var(--muted);
+}
+
+.projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card {
+    min-height: 465px;
+    color: var(--text);
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.project-card:hover {
+    border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+    box-shadow: none;
+}
+
+.project-number {
+    color: var(--muted);
+}
+
+.project-icon {
+    background: var(--surface-soft);
+    border-color: var(--border);
+}
+
+.project-icon-data {
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+}
+
+.project-tags li {
+    color: var(--text-soft);
+    background: var(--surface-soft);
+}
+
+.contact-wrap {
+    background: var(--primary-strong);
 }
 
 /* Readability: enlarge supporting copy while preserving heading sizes */
@@ -2278,11 +2423,6 @@ html[data-theme="dark"] .chat-form button:hover {
 
     .projects-grid {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .project-card:last-child {
-        grid-column: 1 / -1;
-        min-height: 430px;
     }
 
     .contact-wrap {
