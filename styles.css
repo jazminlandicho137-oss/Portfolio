@@ -1492,23 +1492,87 @@ html[data-theme="dark"] .theme-toggle .moon-icon {
     background: var(--primary-soft);
 }
 
-.project-icon-data {
-    align-items: end;
-    gap: 9px;
-    padding: 27px 37px;
-    background-image: linear-gradient(color-mix(in srgb, var(--panel-line) 55%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--panel-line) 55%, transparent) 1px, transparent 1px);
-    background-size: 16px 16px;
+.project-icon-warning {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 10px;
+    padding: 17px 20px;
 }
 
-.project-icon-data i {
+.warning-preview-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+}
+
+.warning-preview-head b {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.risk-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.risk-summary i {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 7px 8px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-style: normal;
+}
+
+.risk-summary span {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.risk-summary strong {
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+}
+
+.risk-summary i:first-child {
+    border-color: color-mix(in srgb, #d95d6f 40%, var(--border));
+}
+
+.risk-summary i:first-child strong {
+    color: #d95d6f;
+}
+
+.risk-summary i:nth-child(2) {
+    border-color: color-mix(in srgb, #d59b43 40%, var(--border));
+}
+
+.risk-summary i:nth-child(2) strong {
+    color: #d59b43;
+}
+
+.risk-summary i:last-child strong {
+    color: var(--success);
+}
+
+.warning-trend {
     width: 100%;
-    height: var(--bar);
-    background: var(--primary-soft);
-    border-radius: 3px 3px 0 0;
+    height: 30px;
 }
 
-.project-icon-data i:nth-child(2n) {
-    background: var(--accent);
+.warning-trend polyline {
+    fill: none;
+    stroke: var(--accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
 }
 
 .project-card-copy {
@@ -2293,8 +2357,9 @@ html[data-theme="dark"] .ambient-grid {
     border-color: var(--border);
 }
 
-.project-icon-data {
+.project-icon-warning {
     background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 16px 16px;
 }
 
 .project-tags li {
