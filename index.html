@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Jazmin Landicho, a Computer Science undergraduate, aspiring software engineer, and aspiring data analyst.">
+    <meta name="theme-color" content="#0f5f55">
+    <title>Jazmin Landicho | Software Engineer & Data Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (() => {
+            let savedTheme = null;
+            try {
+                savedTheme = localStorage.getItem("jfl-theme");
+            } catch (_) {
+                // Use the operating-system preference when storage is unavailable.
+            }
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+        })();
+    </script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+        <div class="dashboard-nav shell">
+            <a class="brand-button" href="#home" aria-label="JFL home">
+                <span class="brand-mark">JFL</span>
+                <span class="brand-copy">
+                    <strong>Jazmin F. Landicho</strong>
+                    <small>Personal dashboard</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" data-menu-toggle>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation" data-nav>
+                <a class="is-active" href="#home">Home</a>
+                <a href="#about">About Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <button class="nav-chat" type="button" data-chat-open>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5 3.5 21v-5A8.5 8.5 0 1 1 7 18.5Z"/><path d="M8 10h8M8 14h5"/></svg>
+                    Ask Fayri
+                </button>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color mode" data-theme-toggle>
+                <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.7 8.7 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero shell" id="home">
+            <div class="hero-content reveal">
+                <p class="eyebrow"><span></span> Second-year Computer Science student</p>
+                <h1>Hi, I’m <span>Jazmin Landicho.</span></h1>
+                <p class="hero-overview">I am a second-year Computer Science student, an aspiring software engineer and data analyst interested in clean systems, useful insights, and technology that makes everyday work a little easier.</p>
+
+                <div class="title-tags" aria-label="Professional titles">
+                    <span>Computer Science Undergraduate</span>
+                    <span>DOST-SEI Scholar 2025</span>
+                    <span>Aspiring Data Analyst</span>
+                    <span>Aspiring Software Engineer</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">View projects <span aria-hidden="true">↗</span></a>
+                    <a class="button button-secondary" href="#about">Meet Jazmin <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+
+            <div class="hero-dashboard reveal" aria-label="A preview of Jazmin's software and data portfolio">
+                <div class="dashboard-topbar">
+                    <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <span>jazmin.profile</span>
+                    <i>online</i>
+                </div>
+                <div class="dashboard-body">
+                    <div class="profile-row">
+                        <div class="profile-photo">
+                            <span aria-hidden="true">JL</span>
+                            <!-- Save the uploaded portrait as profile-picture.jpg in this folder. -->
+                            <img src="profile-picture.jpg" alt="Portrait of Jazmin Landicho" onerror="this.remove()">
+                        </div>
+                        <div>
+                            <small>WELCOME TO MY PORTFOLIO</small>
+                            <strong>Code + Data + Purpose</strong>
+                        </div>
+                    </div>
+
+                    <div class="code-panel" aria-hidden="true">
+                        <div class="panel-heading"><span>developer.py</span><b>PY</b></div>
+                        <div class="code-line"><i>01</i><code><mark>def</mark> build_future():</code></div>
+                        <div class="code-line"><i>02</i><code>&nbsp;&nbsp;learn = <mark>True</mark></code></div>
+                        <div class="code-line"><i>03</i><code>&nbsp;&nbsp;while learn:</code></div>
+                        <div class="code-line"><i>04</i><code>&nbsp;&nbsp;&nbsp;&nbsp;<mark>practice()</mark></code></div>
+                        <div class="code-line"><i>05</i><code>&nbsp;&nbsp;&nbsp;&nbsp;<mark>improve()</mark></code></div>
+                    </div>
+
+                    <div class="dashboard-stats">
+                        <div>
+                            <small>Education</small>
+                            <strong>BS Computer Science</strong>
+                            <span>2nd year · LCC</span>
+                        </div>
+                        <div>
+                            <small>Focus</small>
+                            <strong>Software + Data</strong>
+                            <span>Learning by building</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-card" aria-hidden="true">
+                        <div class="chart-copy"><span>Problem → solution</span><small>always iterating</small></div>
+                        <div class="bars"><i style="--bar: 34%"></i><i style="--bar: 52%"></i><i style="--bar: 45%"></i><i style="--bar: 72%"></i><i style="--bar: 63%"></i><i style="--bar: 88%"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about-section" id="about">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <p class="section-label">01 / About me</p>
+                    <h2>Curious mind.<br><span>Growth-focused.</span></h2>
+                </div>
+
+                <div class="about-intro">
+                    <article class="about-copy reveal">
+                        <p class="lead">I enjoy the moment when a confusing problem becomes something I can understand, test, and improve.</p>
+                        <p>My interest in software engineering and data analysis comes from the same place: I like making complex things feel simpler. In software, that means thoughtful logic and reliable code. In data, it means asking better questions and finding patterns that are useful—not just impressive.</p>
+                        <p>Right now, I’m developing my foundation through hands-on projects, documentation, and steady practice. I’m especially interested in opportunities where I can contribute, learn from experienced people, and grow into the field.</p>
+                    </article>
+
+                    <aside class="about-note reveal">
+                        <span>MY MOTIVATION</span>
+                        <blockquote>“Make the complicated understandable, then make it useful.”</blockquote>
+                        <p>Always learning. Always improving.</p>
+                    </aside>
+                </div>
+
+                <div class="subsection reveal">
+                    <div class="subsection-heading">
+                        <p class="section-label">Skills</p>
+                        <h3>My current toolkit</h3>
+                    </div>
+                    <div class="skills-grid">
+                        <article class="skill-card">
+                            <div class="skill-heading"><span>&lt;/&gt;</span><h4>Languages</h4></div>
+                            <ul>
+                                <li>Python</li>
+                                <li>JavaScript</li>
+                                <li>PHP</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </article>
+                        <article class="skill-card">
+                            <div class="skill-heading"><span>⌁</span><h4>Tools, Practice &amp; Data Management</h4></div>
+                            <ul>
+                                <li>Git</li>
+                                <li>GitHub</li>
+                                <li>MySQL</li>
+                                <li>Supabase</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="subsection journey-section">
+                    <div class="subsection-heading reveal">
+                        <p class="section-label">Journey</p>
+                        <h3>Education</h3>
+                        <p>School has sharpened my ability to think critically, solve unfamiliar problems, work through challenges, and turn consistent practice into steady improvement.</p>
+                    </div>
+
+                    <div class="timeline reveal">
+                        <article class="timeline-item current-item">
+                            <div class="timeline-marker"><span></span></div>
+                            <div class="timeline-content">
+                                <span class="timeline-label">Current</span>
+                                <h4>Bachelor of Science in Computer Science</h4>
+                                <p>Lipa City Colleges · College of Computing and Technology Engineering</p>
+                                <small>Second-year undergraduate student</small>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><span></span></div>
+                            <div class="timeline-content">
+                                <span class="timeline-label">Senior High School</span>
+                                <h4>Lipa Montessori School of Learnings Inc.</h4>
+                                <p>Science, Technology, Engineering, and Mathematics strand</p>
+                                <small class="honor-badge">Consistent Honor Student</small>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><span></span></div>
+                            <div class="timeline-content">
+                                <span class="timeline-label">Junior High School</span>
+                                <h4>Lipa Montessori School of Learnings Inc.</h4>
+                                <small class="honor-badge">Consistent Honor Student</small>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-marker"><span></span></div>
+                            <div class="timeline-content">
+                                <span class="timeline-label">Elementary</span>
+                                <h4>Bulaklakan Elementary School</h4>
+                                <small class="honor-badge">Graduated as Salutatorian</small>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-heading reveal">
+                        <p class="section-label">Extracurricular education</p>
+                        <h3>Learning beyond the classroom</h3>
+                    </div>
+                    <div class="activity-grid">
+                        <article class="activity-card reveal">
+                            <span class="activity-number">01</span>
+                            <div>
+                                <h4>Asian Math Sci League Inc.</h4>
+                                <p>Mathematics Enrichment Program participant and Top 1 student.</p>
+                            </div>
+                            <span class="activity-badge">Mathematics</span>
+                        </article>
+                        <article class="activity-card reveal">
+                            <span class="activity-number">02</span>
+                            <div>
+                                <h4>MTAP-DepEd Math Challenge</h4>
+                                <p>Multiple awardee for seven years of continuous math competition.</p>
+                            </div>
+                            <span class="activity-badge">Competition</span>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-heading reveal">
+                        <p class="section-label">Leadership</p>
+                        <h3>Leading, serving, and improving</h3>
+                    </div>
+
+                    <div class="leadership-grid">
+                        <article class="work-immersion-card reveal">
+                            <div class="work-card-top">
+                                <span>WORK IMMERSION</span>
+                                <i>Torres Technology Center Corp.</i>
+                            </div>
+                            <h4>i-Leap Program</h4>
+                            <p>Joined a business operations simulation where teams planned, presented, and evaluated a complete facility concept.</p>
+                            <ul class="award-list">
+                                <li>Business Operations Simulation Champion</li>
+                                <li>Best Booth Presentation</li>
+                                <li>Best Prototype</li>
+                                <li>Outstanding Presenter</li>
+                                <li>Outstanding Performance</li>
+                                <li>Logistics Excellence</li>
+                                <li>Overall Facility Layout</li>
+                                <li>Above and Beyond Award</li>
+                            </ul>
+                        </article>
+
+                        <article class="leadership-card reveal">
+                            <span class="leadership-icon" aria-hidden="true">✦</span>
+                            <div class="leadership-role">
+                                <small>Current leadership</small>
+                                <h4>Vice President of Internal Affairs</h4>
+                                <p>Computing Development and Engineering Society — LCC</p>
+                            </div>
+                            <div class="past-roles">
+                                <small>Former leadership roles</small>
+                                <ul>
+                                    <li>President and Vice President of Academics Club</li>
+                                    <li>SPG Vice President and Public Information Officer</li>
+                                    <li>Class Vice President and Class Secretary</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects-section" id="projects">
+            <div class="shell">
+                <div class="projects-heading reveal">
+                    <div>
+                        <p class="section-label">02 / Projects</p>
+                        <h2>Ideas turned into<br><span>working solutions.</span></h2>
+                    </div>
+                    <p>These are starting templates. To connect a project, replace the placeholder GitHub username and repository name inside each link’s <code>href</code>.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-number">01</div>
+                        <div class="project-icon project-icon-web" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <div class="project-card-copy">
+                            <span class="project-type">Web application</span>
+                            <h3>Student Information System</h3>
+                            <p>A student directory that practices data entry, connected web forms, cloud data storage, and Supabase integration.</p>
+                            <ul class="project-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li></ul>
+                            <!-- Replace YOUR_USERNAME and the repository name below. -->
+                            <a class="project-link" href="https://github.com/YOUR_USERNAME/student-information-system" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-number">02</div>
+                        <div class="project-icon project-icon-data" aria-hidden="true"><i style="--bar: 38%"></i><i style="--bar: 57%"></i><i style="--bar: 46%"></i><i style="--bar: 78%"></i><i style="--bar: 92%"></i></div>
+                        <div class="project-card-copy">
+                            <span class="project-type">Python project</span>
+                            <h3>Search Algorithm Lab</h3>
+                            <p>A small experiment comparing linear and binary search, including timing measurements to explore performance differences.</p>
+                            <ul class="project-tags"><li>Python</li><li>Algorithms</li><li>Performance</li></ul>
+                            <!-- Replace YOUR_USERNAME and the repository name below. -->
+                            <a class="project-link" href="https://github.com/YOUR_USERNAME/search-algorithm-lab" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-number">03</div>
+                        <div class="project-icon project-icon-objects" aria-hidden="true"><span>OOP</span><i></i><i></i><i></i></div>
+                        <div class="project-card-copy">
+                            <span class="project-type">Object-oriented project</span>
+                            <h3>Order Workflow</h3>
+                            <p>An interactive ordering exercise that uses objects to manage products, quantities, totals, payments, and calculated change.</p>
+                            <ul class="project-tags"><li>JavaScript</li><li>OOP</li><li>DOM</li></ul>
+                            <!-- Replace YOUR_USERNAME and the repository name below. -->
+                            <a class="project-link" href="https://github.com/YOUR_USERNAME/order-workflow" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="shell">
+                <div class="contact-wrap reveal">
+                    <div class="contact-copy">
+                        <p class="section-label">03 / Contact</p>
+                        <h2>Let’s create something<br><span>worth using.</span></h2>
+                        <p>I’m open to internships, entry-level opportunities, collaborations, and conversations about software engineering and data analysis.</p>
+                        <a class="email-highlight" href="mailto:jazminlandicho137@gmail.com">jazminlandicho137@gmail.com <span aria-hidden="true">↗</span></a>
+                    </div>
+
+                    <!-- EDIT THIS BLOCK: replace each placeholder URL and YOUR_NUMBER with your own information. -->
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/YOUR_USERNAME/" target="_blank" rel="noopener">
+                            <span class="contact-platform linkedin">in</span>
+                            <span><small>LinkedIn</small><strong>Add your LinkedIn URL</strong></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">
+                            <span class="contact-platform github">GH</span>
+                            <span><small>GitHub</small><strong>Add your GitHub URL</strong></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://www.instagram.com/YOUR_USERNAME/" target="_blank" rel="noopener">
+                            <span class="contact-platform instagram">IG</span>
+                            <span><small>Instagram</small><strong>Add your Instagram URL</strong></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://www.facebook.com/YOUR_USERNAME" target="_blank" rel="noopener">
+                            <span class="contact-platform facebook">f</span>
+                            <span><small>Facebook</small><strong>Add your Facebook URL</strong></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="tel:YOUR_NUMBER">
+                            <span class="contact-platform phone">☎</span>
+                            <span><small>Contact Number</small><strong>Add your contact number</strong></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <a class="footer-brand" href="#home"><span>JFL</span> Jazmin Landicho</a>
+            <p>Built with HTML, CSS &amp; JavaScript.</p>
+            <a href="#home">Back to top <span aria-hidden="true">↑</span></a>
+            <small>© <span data-year></span> Jazmin Landicho</small>
+        </div>
+    </footer>
+
+    <button class="chat-launcher" type="button" aria-label="Open Fayri chatbot" aria-controls="fayri-chat" aria-expanded="false" data-chat-open>
+        <span class="launcher-icon" aria-hidden="true">✦</span>
+        <span><strong>Ask about me</strong><small>Fayri is here to help</small></span>
+    </button>
+
+    <aside class="chatbot" id="fayri-chat" aria-label="Fayri chatbot" aria-hidden="true" data-chatbot>
+        <header class="chat-header">
+            <div class="chat-avatar">F<span></span></div>
+            <div>
+                <strong>Fayri</strong>
+                <small><i></i> Portfolio assistant</small>
+            </div>
+            <button type="button" aria-label="Close Fayri chatbot" data-chat-close>×</button>
+        </header>
+
+        <div class="chat-messages" aria-live="polite" aria-label="Chat messages" data-chat-messages>
+            <div class="message bot-message">
+                <span class="message-avatar">F</span>
+                <div>
+                    <p>Hi! I’m Fayri. Ask me about Jazmin’s skills, leadership experience, or how to get in touch.</p>
+                    <time>Now</time>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-prompts" aria-label="Suggested questions">
+            <button type="button" data-question="What are your strongest skills?">Strongest skills</button>
+            <button type="button" data-question="What leadership experiences do you have?">Leadership</button>
+            <button type="button" data-question="What are some of your experience in Leadership?">Leadership details</button>
+            <button type="button" data-question="How can I contact you?">Contact</button>
+        </div>
+
+        <form class="chat-form" data-chat-form>
+            <label class="sr-only" for="chat-input">Message Fayri</label>
+            <input id="chat-input" type="text" maxlength="180" placeholder="Ask Fayri something..." autocomplete="off" data-chat-input>
+            <button type="submit" aria-label="Send message">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 17 8-17 8 3-8-3-8Z"/><path d="M7 12h14"/></svg>
+            </button>
+        </form>
+        <p class="chat-note">Fayri answers this portfolio’s key questions.</p>
+    </aside>
+
+    <script>
+        // Fayri is intentionally rule-based and does not send data anywhere.
+    </script>
+</body>
+</html>
