@@ -35,7 +35,7 @@ if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
     });
 }
 
-/* Mobile dashboard navigation */
+/* Mobile navigation */
 function setMenuState(isOpen) {
     if (!menuToggle || !navigation) return;
 
@@ -53,9 +53,7 @@ menuToggle?.addEventListener("click", () => {
     setMenuState(menuToggle.getAttribute("aria-expanded") !== "true");
 });
 
-navigationLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-});
+navigationLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
 window.addEventListener("resize", () => {
     if (window.innerWidth > 880) closeMenu();
@@ -95,7 +93,7 @@ function updateHeader() {
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
 
-const observedSections = ["home", "about", "projects", "contact"]
+const observedSections = ["home", "skills", "projects", "about", "contact"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
@@ -154,8 +152,18 @@ const chatPrompts = document.querySelectorAll("[data-question]");
 
 const fayriResponses = [
     {
-        keywords: ["what are your strongest skills", "strongest skills", "what are you good at"],
-        answer: "My strongest skills are critical thinking, breaking problems into clear steps, logical programming, data management, and collaboration. I strengthen these through class, math programs, leadership roles, documentation, and hands-on projects."
+        keywords: ["what are your strongest skills", "strongest skills", "what are you good at", "best skills"],
+        answer: "My strongest applied skills are PHP and MySQL for web applications, JavaScript, HTML, and CSS for interfaces, and Supabase for connected records. I used them in the Student Early Warning System, HR System, and Student Information System."
+    },
+    {
+        keywords: ["see jazmin's projects", "see my projects", "what have you built", "show me projects", "projects"],
+        answer: "I built three projects:\n\n1. Student Early Warning System - PHP/MySQL risk scoring from attendance and grades.\n2. HR System - PHP/MySQL employee, payroll, loan, and report administration.\n3. Student Information System - JavaScript and Supabase student records.",
+        action: { label: "View projects", href: "#projects" }
+    },
+    {
+        keywords: ["download resume", "download my resume", "resume", "cv"],
+        answer: "You can download a one-page résumé with my project, education, activity, and leadership background.",
+        action: { label: "Download PDF", href: "assets/Jazmin-Landicho-Resume.pdf", download: true }
     },
     {
         keywords: ["what leadership experiences do you have", "leadership experiences", "leadership experience"],
@@ -163,27 +171,33 @@ const fayriResponses = [
     },
     {
         keywords: ["what are some of your experience in leadership", "some of your experience in leadership", "some experience in leadership", "leadership contribution"],
-        answer: "In the i-Leap Program, I helped a team take part in a business operations simulation and earned recognition for the champion business simulation, best booth presentation, best prototype, outstanding presenter, outstanding performance, logistics excellence, overall facility layout, and the Above and Beyond Award.\n\nIn my organizations, I’ve also coordinated internal activities, represented my team, shared information clearly, and supported fellow students."
+        answer: "In the i-Leap Program, I worked with a team on a business operations simulation and earned recognition for Business Operations Simulation Champion, Best Booth Presentation and Prototype, and the Above and Beyond Award.\n\nThese experiences reflect teamwork, planning, presentation, initiative, and follow-through."
     },
     {
         keywords: ["how can i contact you", "how do i contact you", "contact you", "email you", "reach you"],
-        answer: "You can email me at jazminlandicho137@gmail.com. You can also find my LinkedIn, GitHub, Facebook, and contact-number links in the Contact section."
+        answer: "You can email me at jazminlandicho137@gmail.com. My LinkedIn and GitHub profiles are also available in the Contact section, along with a downloadable résumé."
+    },
+    {
+        keywords: ["sql", "mysql", "database", "supabase"],
+        answer: "I use SQL through MySQL for student and employee records, including prepared statements, inserts, updates, and ordered queries. I also use Supabase to connect a browser-based student directory to cloud data."
     }
 ];
+
+const fallbackResponse = {
+    answer: "I can answer questions about Jazmin’s specific skills, projects, résumé, leadership experience, and contact details. Try “Strongest skills,” “See projects,” “Download résumé,” or “Contact.”"
+};
 
 function getFayriAnswer(question) {
     const normalizedQuestion = question.toLowerCase().replace(/[’']/g, "");
 
-    return fayriResponses.find((item) => {
-        return item.keywords.some((keyword) => normalizedQuestion.includes(keyword));
-    })?.answer || "I can answer questions about Jazmin’s strongest skills, leadership experience, and contact details. Try one of the suggested questions or choose “Strongest skills,” “Leadership,” or “Contact.”";
+    return fayriResponses.find((item) => item.keywords.some((keyword) => normalizedQuestion.includes(keyword))) || fallbackResponse;
 }
 
 function scrollChatToBottom() {
     if (chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-function addMessage(message, sender) {
+function addMessage(message, sender, action) {
     if (!chatMessages) return;
 
     const messageWrapper = document.createElement("div");
@@ -205,6 +219,25 @@ function addMessage(message, sender) {
     }).format(new Date());
 
     content.append(text, time);
+
+    if (sender === "bot" && action) {
+        const actionLink = document.createElement("a");
+        actionLink.className = "chat-action";
+        actionLink.href = action.href;
+        actionLink.textContent = `${action.label} →`;
+
+        if (action.download) {
+            actionLink.download = "Jazmin-Landicho-Resume.pdf";
+        } else if (!action.href.startsWith("#")) {
+            actionLink.target = "_blank";
+            actionLink.rel = "noopener";
+        } else {
+            actionLink.addEventListener("click", () => setChatState(false));
+        }
+
+        content.append(actionLink);
+    }
+
     messageWrapper.append(avatar, content);
     chatMessages.append(messageWrapper);
     scrollChatToBottom();
@@ -239,7 +272,8 @@ function submitQuestion(question) {
 
     window.setTimeout(() => {
         typingMessage?.remove();
-        addMessage(getFayriAnswer(cleanQuestion), "bot");
+        const response = getFayriAnswer(cleanQuestion);
+        addMessage(response.answer, "bot", response.action);
     }, reducedMotion ? 0 : 450);
 }
 
@@ -292,6 +326,5 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-/* Footer year */
 const year = document.querySelector("[data-year]");
 if (year) year.textContent = new Date().getFullYear();

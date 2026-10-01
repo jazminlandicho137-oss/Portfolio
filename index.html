@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio of Jazmin Landicho, a Computer Science undergraduate, aspiring software engineer, and aspiring data analyst.">
+    <meta name="description" content="Portfolio of Jazmin Landicho, a second-year Computer Science student building web and data-driven applications with PHP, MySQL, JavaScript, and Supabase.">
     <meta name="theme-color" content="#7b3fa3">
-    <title>Jazmin Landicho | Software Engineer & Data Analyst</title>
+    <meta property="og:title" content="Jazmin Landicho | Computer Science Student">
+    <meta property="og:description" content="Web and data-driven applications built with PHP, MySQL, JavaScript, and Supabase.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/portfolio-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="assets/portfolio-preview.png">
+    <title>Jazmin Landicho | Computer Science Student</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,7 +47,7 @@
                 <span class="brand-mark">JFL</span>
                 <span class="brand-copy">
                     <strong>Jazmin Landicho</strong>
-                    <small>Personal dashboard</small>
+                    <small>Web + Data</small>
                 </span>
             </a>
 
@@ -51,8 +58,9 @@
 
             <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation" data-nav>
                 <a class="is-active" href="#home">Home</a>
-                <a href="#about">About Me</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#about">About</a>
                 <a href="#contact">Contact</a>
                 <button class="nav-chat" type="button" data-chat-open>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5 3.5 21v-5A8.5 8.5 0 1 1 7 18.5Z"/><path d="M8 10h8M8 14h5"/></svg>
@@ -69,24 +77,27 @@
     <main id="main-content">
         <section class="hero shell" id="home">
             <div class="hero-content reveal">
-                <p class="eyebrow"><span></span> Second-year Computer Science student</p>
+                <p class="eyebrow"><span></span> Second-year CS student · DOST-SEI Scholar 2025</p>
                 <h1>Hi, I’m <span>Jazmin Landicho.</span></h1>
-                <p class="hero-overview">I am a second-year Computer Science student, an aspiring software engineer and data analyst interested in clean systems, useful insights, and technology that makes everyday work a little easier.</p>
+                <p class="hero-overview">I build web and data-driven applications with PHP, MySQL, JavaScript, and Supabase—tools that turn student, employee, and advising records into clearer, more useful workflows.</p>
 
-                <div class="title-tags" aria-label="Professional titles">
+                <div class="title-tags" aria-label="Professional focus">
                     <span>Computer Science Undergraduate</span>
                     <span>DOST-SEI Scholar 2025</span>
-                    <span>Aspiring Data Analyst</span>
-                    <span>Aspiring Software Engineer</span>
+                    <span>Web Applications</span>
+                    <span>Data-Driven Systems</span>
                 </div>
 
                 <div class="hero-actions">
                     <a class="button button-primary" href="#projects">View projects <span aria-hidden="true">↗</span></a>
-                    <a class="button button-secondary" href="#about">Meet Jazmin <span aria-hidden="true">→</span></a>
+                    <a class="button button-secondary" href="assets/Jazmin-Landicho-Resume.pdf" download>
+                        Download résumé
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v9M6 9l4 4 4-4M4 16h12"/></svg>
+                    </a>
                 </div>
             </div>
 
-            <div class="hero-dashboard reveal" aria-label="A preview of Jazmin's software and data portfolio">
+            <div class="hero-dashboard reveal" aria-label="Jazmin's development focus">
                 <div class="dashboard-topbar">
                     <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
                     <span>jazmin.profile</span>
@@ -96,30 +107,39 @@
                     <div class="profile-row">
                         <div class="profile-photo">
                             <span aria-hidden="true">JL</span>
-                            <!-- Profile portrait supplied by Jazmin. -->
                             <img src="profile-picture.jpg" alt="Portrait of Jazmin Landicho" onerror="this.remove()">
                         </div>
                         <div>
-                            <small>WELCOME TO MY PORTFOLIO</small>
-                            <strong>Code + Data + Purpose</strong>
+                            <small>COMPUTER SCIENCE STUDENT</small>
+                            <strong>Web apps + useful data</strong>
                         </div>
                     </div>
 
                     <div class="tech-ribbon" aria-hidden="true">
-                        <span class="tech-icon icon-python">Py</span>
-                        <span class="tech-icon icon-javascript">JS</span>
-                        <span class="tech-icon icon-php">PHP</span>
-                        <span class="tech-icon icon-html">&lt;&gt;</span>
-                        <span class="tech-icon icon-css">#</span>
+                        <span class="tech-icon icon-python"><img src="assets/icons/python.svg" alt=""></span>
+                        <span class="tech-icon icon-javascript"><img src="assets/icons/javascript.svg" alt=""></span>
+                        <span class="tech-icon icon-php"><img src="assets/icons/php.svg" alt=""></span>
+                        <span class="tech-icon icon-html"><img src="assets/icons/html5.svg" alt=""></span>
+                        <span class="tech-icon icon-css"><img src="assets/icons/css3.svg" alt=""></span>
                     </div>
 
-                    <div class="code-panel" aria-hidden="true">
-                        <div class="panel-heading"><span>developer.py</span><b>PY</b></div>
-                        <div class="code-line"><i>01</i><code><mark>def</mark> build_future():</code></div>
-                        <div class="code-line"><i>02</i><code>&nbsp;&nbsp;learn = <mark>True</mark></code></div>
-                        <div class="code-line"><i>03</i><code>&nbsp;&nbsp;while learn:</code></div>
-                        <div class="code-line"><i>04</i><code>&nbsp;&nbsp;&nbsp;&nbsp;<mark>practice()</mark></code></div>
-                        <div class="code-line"><i>05</i><code>&nbsp;&nbsp;&nbsp;&nbsp;<mark>improve()</mark></code></div>
+                    <div class="capability-panel">
+                        <div class="capability-heading"><span>What I can do</span><b>PROJECT EVIDENCE</b></div>
+                        <a class="capability-row" href="#early-warning">
+                            <i>01</i>
+                            <span><strong>PHP + MySQL web apps</strong><small>Student Early Warning System · HR System</small></span>
+                            <b aria-hidden="true">↗</b>
+                        </a>
+                        <a class="capability-row" href="#student-info">
+                            <i>02</i>
+                            <span><strong>JavaScript + Supabase</strong><small>Connected student records</small></span>
+                            <b aria-hidden="true">↗</b>
+                        </a>
+                        <a class="capability-row" href="#projects">
+                            <i>03</i>
+                            <span><strong>Data-minded logic</strong><small>Risk scoring · prepared statements · clean records</small></span>
+                            <b aria-hidden="true">↗</b>
+                        </a>
                     </div>
 
                     <div class="dashboard-stats">
@@ -129,16 +149,189 @@
                             <span>2nd year · LCC</span>
                         </div>
                         <div>
-                            <small>Focus</small>
-                            <strong>Software + Data</strong>
+                            <small>Build focus</small>
+                            <strong>Web + Data</strong>
                             <span>Learning by building</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="chart-card" aria-hidden="true">
-                        <div class="chart-copy"><span>Problem → solution</span><small>always iterating</small></div>
-                        <div class="bars"><i style="--bar: 34%"></i><i style="--bar: 52%"></i><i style="--bar: 45%"></i><i style="--bar: 72%"></i><i style="--bar: 63%"></i><i style="--bar: 88%"></i></div>
+        <section class="section skills-section" id="skills">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <p class="section-label">01 / Skills</p>
+                    <h2>Skills backed by<br><span>real work.</span></h2>
+                    <p class="section-intro">Each skill connects to a project, activity, or practice that helped me use it.</p>
+                </div>
+
+                <div class="skills-grid evidence-skills">
+                    <article class="skill-card reveal">
+                        <div class="skill-heading"><span class="skill-heading-icon">01</span><h4>Languages</h4></div>
+                        <ul class="skill-evidence-list">
+                            <li>
+                                <span class="tech-icon icon-python"><img src="assets/icons/python.svg" alt=""></span>
+                                <span><strong>Python</strong><small>Algorithms and programming practice</small></span>
+                                <i class="skill-level">Learning</i>
+                            </li>
+                            <li>
+                                <span class="tech-icon icon-javascript"><img src="assets/icons/javascript.svg" alt=""></span>
+                                <span><strong>JavaScript</strong><small>Interactive web interfaces</small></span>
+                                <i class="skill-level">Core</i>
+                            </li>
+                            <li>
+                                <span class="tech-icon icon-php"><img src="assets/icons/php.svg" alt=""></span>
+                                <span><strong>PHP</strong><small>Early Warning + HR systems</small></span>
+                                <i class="skill-level">Applied</i>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <div class="skill-heading"><span class="skill-heading-icon">02</span><h4>Web</h4></div>
+                        <ul class="skill-evidence-list">
+                            <li>
+                                <span class="tech-icon icon-html"><img src="assets/icons/html5.svg" alt=""></span>
+                                <span><strong>HTML</strong><small>Structured forms and dashboards</small></span>
+                                <i class="skill-level">Core</i>
+                            </li>
+                            <li>
+                                <span class="tech-icon icon-css"><img src="assets/icons/css3.svg" alt=""></span>
+                                <span><strong>CSS</strong><small>Responsive, accessible interfaces</small></span>
+                                <i class="skill-level">Core</i>
+                            </li>
+                            <li>
+                                <span class="tech-icon icon-data"><span aria-hidden="true">DB</span></span>
+                                <span><strong>Responsive design</strong><small>Desktop and mobile layouts</small></span>
+                                <i class="skill-level">Applied</i>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <div class="skill-heading"><span class="skill-heading-icon">03</span><h4>Databases</h4></div>
+                        <ul class="skill-evidence-list">
+                            <li>
+                                <span class="tech-icon icon-mysql"><img src="assets/icons/mysql.svg" alt=""></span>
+                                <span><strong>SQL / MySQL</strong><small>Student and employee records</small></span>
+                                <i class="skill-level">Applied</i>
+                            </li>
+                            <li>
+                                <span class="tech-icon icon-supabase"><img src="assets/icons/supabase.svg" alt=""></span>
+                                <span><strong>Supabase</strong><small>Student Information System</small></span>
+                                <i class="skill-level">Learning</i>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <div class="skill-heading"><span class="skill-heading-icon">04</span><h4>Tools &amp; Practice</h4></div>
+                        <ul class="skill-evidence-list">
+                            <li>
+                                <span class="tech-icon icon-git"><img src="assets/icons/git.svg" alt=""></span>
+                                <span><strong>Git</strong><small>Version control and project history</small></span>
+                                <i class="skill-level">Learning</i>
+                            </li>
+                            <li>
+                                <span class="tech-icon icon-github"><img src="assets/icons/github.svg" alt=""></span>
+                                <span><strong>GitHub</strong><small>Repositories and project sharing</small></span>
+                                <i class="skill-level">Learning</i>
+                            </li>
+                            <li>
+                                <span class="tech-icon icon-problem"><span aria-hidden="true">∑</span></span>
+                                <span><strong>Problem solving</strong><small>Math competitions and casework</small></span>
+                                <i class="skill-level">Core</i>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects-section" id="projects">
+            <div class="shell">
+                <div class="projects-heading reveal">
+                    <div>
+                        <p class="section-label">02 / Projects</p>
+                        <h2>What I built,<br><span>and what it does.</span></h2>
                     </div>
+                    <p>Each project connects a hands-on skill to a practical result.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal" id="early-warning">
+                        <div class="project-number">01</div>
+                        <div class="project-icon project-icon-warning" aria-hidden="true">
+                            <div class="warning-preview-head"><span>Risk overview</span><b>3 flags</b></div>
+                            <div class="risk-summary">
+                                <i><span>High</span><strong>04</strong></i>
+                                <i><span>Medium</span><strong>07</strong></i>
+                                <i><span>Low</span><strong>12</strong></i>
+                            </div>
+                            <svg class="warning-trend" viewBox="0 0 260 36" preserveAspectRatio="none"><polyline points="0,31 32,27 65,29 98,19 130,23 163,12 196,16 229,7 260,10"/></svg>
+                        </div>
+                        <div class="project-card-copy">
+                            <span class="project-type">PHP &amp; MySQL application</span>
+                            <h3>Student Early Warning System</h3>
+                            <p>Built student registration, data intake, attendance tracking, and grade-based risk scoring with prepared statements.</p>
+                            <p class="project-result"><span>Result</span> Calculates risk levels to produce a prioritized review list for early intervention.</p>
+                            <ul class="project-tags" aria-label="Related skills">
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-early-warning-system" target="_blank" rel="noopener">PHP</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-early-warning-system" target="_blank" rel="noopener">MySQL</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-early-warning-system" target="_blank" rel="noopener">SQL</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-early-warning-system" target="_blank" rel="noopener">Risk scoring</a></li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/jazminlandicho137-oss/student-early-warning-system" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" id="hr-system">
+                        <div class="project-number">02</div>
+                        <div class="project-icon project-icon-hr" aria-hidden="true">
+                            <div class="hr-window-bar"><b>HR System</b><span>Employees</span><span>Loan</span><span>Payroll</span><span>Reports</span></div>
+                            <div class="hr-window-body">
+                                <div class="hr-departments"><strong>Departments</strong><i class="active"></i><i></i><i></i><i></i><i></i></div>
+                                <div class="hr-table-preview">
+                                    <div class="hr-table-search"><i></i><b>Search employee</b></div>
+                                    <div class="hr-table-row head"><i></i><i></i><i></i><i></i></div>
+                                    <div class="hr-table-row"><i></i><i></i><i></i><i></i></div>
+                                    <div class="hr-table-row"><i></i><i></i><i></i><i></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-copy">
+                            <span class="project-type">HR administration application</span>
+                            <h3>HR System</h3>
+                            <p>Developed an administration dashboard for employee records, departments, loans, payroll, reports, search, editing, and deletion.</p>
+                            <p class="project-result"><span>Result</span> Centralizes records into searchable tables with complete CRUD workflows.</p>
+                            <ul class="project-tags" aria-label="Related skills">
+                                <li><a href="https://github.com/jazminlandicho137-oss/hr-system" target="_blank" rel="noopener">PHP</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/hr-system" target="_blank" rel="noopener">MySQL</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/hr-system" target="_blank" rel="noopener">CRUD</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/hr-system" target="_blank" rel="noopener">Payroll</a></li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/jazminlandicho137-oss/hr-system" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" id="student-info">
+                        <div class="project-number">03</div>
+                        <div class="project-icon project-icon-web" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <div class="project-card-copy">
+                            <span class="project-type">Supabase web application</span>
+                            <h3>Student Information System</h3>
+                            <p>Built a browser form and connected student directory using JavaScript, HTML, CSS, and Supabase.</p>
+                            <p class="project-result"><span>Result</span> Stores student records in the cloud and displays them from a connected database.</p>
+                            <ul class="project-tags" aria-label="Related skills">
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-information-system" target="_blank" rel="noopener">JavaScript</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-information-system" target="_blank" rel="noopener">Supabase</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-information-system" target="_blank" rel="noopener">HTML</a></li>
+                                <li><a href="https://github.com/jazminlandicho137-oss/student-information-system" target="_blank" rel="noopener">CSS</a></li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/jazminlandicho137-oss/student-information-system" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -146,7 +339,7 @@
         <section class="section about-section" id="about">
             <div class="shell">
                 <div class="section-heading reveal">
-                    <p class="section-label">01 / About me</p>
+                    <p class="section-label">03 / About me</p>
                     <h2>Curious mind.<br><span>Growth-focused.</span></h2>
                 </div>
 
@@ -163,86 +356,21 @@
                         <p>Always learning. Always improving.</p>
                     </aside>
                 </div>
+            </div>
+        </section>
 
-                <div class="subsection reveal">
-                    <div class="subsection-heading">
-                        <p class="section-label">Skills</p>
-                        <h3>My current toolkit</h3>
-                    </div>
-                    <div class="skills-grid">
-                        <article class="skill-card">
-                            <div class="skill-heading"><span>&lt;/&gt;</span><h4>Languages</h4></div>
-                            <ul class="tech-list">
-                                <li><span class="tech-icon icon-python" aria-hidden="true">Py</span><span>Python</span></li>
-                                <li><span class="tech-icon icon-javascript" aria-hidden="true">JS</span><span>JavaScript</span></li>
-                                <li><span class="tech-icon icon-php" aria-hidden="true">PHP</span><span>PHP</span></li>
-                                <li><span class="tech-icon icon-html" aria-hidden="true">&lt;&gt;</span><span>HTML</span></li>
-                                <li><span class="tech-icon icon-css" aria-hidden="true">#</span><span>CSS</span></li>
-                            </ul>
-                        </article>
-                        <article class="skill-card">
-                            <div class="skill-heading"><span>⌁</span><h4>Tools, Practice &amp; Data Management</h4></div>
-                            <ul class="tech-list">
-                                <li><span class="tech-icon icon-git" aria-hidden="true">
-                                    <svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="8" cy="19" r="2"/><path d="M6 7v5a4 4 0 0 0 4 4h6M8 17v-1a4 4 0 0 1 4-4h6V9"/></svg>
-                                </span><span>Git</span></li>
-                                <li><span class="tech-icon icon-github" aria-hidden="true">GH</span><span>GitHub</span></li>
-                                <li><span class="tech-icon icon-mysql" aria-hidden="true">DB</span><span>MySQL</span></li>
-                                <li><span class="tech-icon icon-supabase" aria-hidden="true">⚡</span><span>Supabase</span></li>
-                            </ul>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="subsection journey-section">
-                    <div class="subsection-heading reveal">
-                        <p class="section-label">Journey</p>
-                        <h3>Education</h3>
-                        <p>School has sharpened my ability to think critically, solve unfamiliar problems, work through challenges, and turn consistent practice into steady improvement.</p>
-                    </div>
-
-                    <div class="timeline reveal">
-                        <article class="timeline-item current-item">
-                            <div class="timeline-marker"><span></span></div>
-                            <div class="timeline-content">
-                                <span class="timeline-label">Current</span>
-                                <h4>Bachelor of Science in Computer Science</h4>
-                                <p>Lipa City Colleges · College of Computing and Technology Engineering</p>
-                                <small>Second-year undergraduate student</small>
-                            </div>
-                        </article>
-                        <article class="timeline-item">
-                            <div class="timeline-marker"><span></span></div>
-                            <div class="timeline-content">
-                                <span class="timeline-label">Senior High School</span>
-                                <h4>Lipa Montessori School of Learnings Inc.</h4>
-                                <p>Science, Technology, Engineering, and Mathematics strand</p>
-                                <small class="honor-badge">Consistent Honor Student</small>
-                            </div>
-                        </article>
-                        <article class="timeline-item">
-                            <div class="timeline-marker"><span></span></div>
-                            <div class="timeline-content">
-                                <span class="timeline-label">Junior High School</span>
-                                <h4>Lipa Montessori School of Learnings Inc.</h4>
-                                <small class="honor-badge">Consistent Honor Student</small>
-                            </div>
-                        </article>
-                        <article class="timeline-item">
-                            <div class="timeline-marker"><span></span></div>
-                            <div class="timeline-content">
-                                <span class="timeline-label">Elementary</span>
-                                <h4>Bulaklakan Elementary School</h4>
-                                <small class="honor-badge">Graduated as Salutatorian</small>
-                            </div>
-                        </article>
-                    </div>
+        <section class="section leadership-section" id="leadership">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <p class="section-label">04 / Leadership &amp; activities</p>
+                    <h2>Learning by leading,<br><span>analyzing, and taking action.</span></h2>
                 </div>
 
                 <div class="subsection">
                     <div class="subsection-heading reveal">
                         <p class="section-label">Extracurricular education</p>
-                        <h3>Learning beyond the classroom</h3>
+                        <h3>Math practice that supports analytical thinking</h3>
+                        <p>Years of math competition practice strengthened the analysis, pattern recognition, and careful reasoning I also use when working with data.</p>
                     </div>
                     <div class="activity-grid">
                         <article class="activity-card reveal">
@@ -257,7 +385,7 @@
                             <span class="activity-number">02</span>
                             <div>
                                 <h4>MTAP-DepEd Math Challenge</h4>
-                                <p>Multiple awardee for seven years of continuous math competition.</p>
+                                <p>Multiple awardee for seven years of continuous competition.</p>
                             </div>
                             <span class="activity-badge">Competition</span>
                         </article>
@@ -267,7 +395,7 @@
                 <div class="subsection">
                     <div class="subsection-heading reveal">
                         <p class="section-label">Leadership</p>
-                        <h3>Leading, serving, and improving</h3>
+                        <h3>Serving teams and turning plans into action</h3>
                     </div>
 
                     <div class="leadership-grid">
@@ -277,17 +405,13 @@
                                 <i>Torres Technology Center Corp.</i>
                             </div>
                             <h4>i-Leap Program</h4>
-                            <p>Joined a business operations simulation where teams planned, presented, and evaluated a complete facility concept.</p>
+                            <p>Worked with a team on a business operations simulation, from planning the concept to presenting the final solution.</p>
                             <ul class="award-list">
                                 <li>Business Operations Simulation Champion</li>
-                                <li>Best Booth Presentation</li>
-                                <li>Best Prototype</li>
-                                <li>Outstanding Presenter</li>
-                                <li>Outstanding Performance</li>
-                                <li>Logistics Excellence</li>
-                                <li>Overall Facility Layout</li>
+                                <li>Best Booth Presentation and Prototype</li>
                                 <li>Above and Beyond Award</li>
                             </ul>
+                            <p class="award-outcome">These recognitions reflect teamwork, presentation, planning, and initiative.</p>
                         </article>
 
                         <article class="leadership-card reveal">
@@ -311,75 +435,34 @@
             </div>
         </section>
 
-        <section class="section projects-section" id="projects">
+        <section class="section education-section" id="education">
             <div class="shell">
-                <div class="projects-heading reveal">
-                    <div>
-                        <p class="section-label">02 / Projects</p>
-                        <h2>Ideas turned into<br><span>working solutions.</span></h2>
-                    </div>
-                    <p>These projects highlight practical work in web applications, data management, and decision-support tools.</p>
+                <div class="section-heading reveal">
+                    <p class="section-label">05 / Education</p>
+                    <h2>Academic growth and<br><span>consistent honors.</span></h2>
                 </div>
 
-                <div class="projects-grid">
-                    <article class="project-card reveal">
-                        <div class="project-number">01</div>
-                        <div class="project-icon project-icon-warning" aria-hidden="true">
-                            <div class="warning-preview-head"><span>Risk overview</span><b>3 flags</b></div>
-                            <div class="risk-summary">
-                                <i><span>High</span><strong>04</strong></i>
-                                <i><span>Medium</span><strong>07</strong></i>
-                                <i><span>Low</span><strong>12</strong></i>
-                            </div>
-                            <svg class="warning-trend" viewBox="0 0 260 36" preserveAspectRatio="none"><polyline points="0,31 32,27 65,29 98,19 130,23 163,12 196,16 229,7 260,10"/></svg>
-                        </div>
-                        <div class="project-card-copy">
-                            <span class="project-type">PHP &amp; MySQL application</span>
-                            <h3>Student Early Warning System</h3>
-                            <p>A student-support dashboard that records attendance and grades, calculates risk levels, and organizes students who may need early intervention.</p>
-                            <ul class="project-tags"><li>PHP</li><li>MySQL</li><li>Risk Scoring</li><li>Prepared Statements</li></ul>
-                            <!-- Replace the repository name below if it differs. -->
-                            <a class="project-link" href="https://github.com/jazminlandicho137-oss/student-early-warning-system" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                <div class="timeline reveal">
+                    <article class="timeline-item current-item">
+                        <div class="timeline-content">
+                            <span class="timeline-label">Current</span>
+                            <h4>Bachelor of Science in Computer Science</h4>
+                            <p>Lipa City Colleges · College of Computing and Technology Engineering</p>
+                            <small class="honor-badge">Second-year undergraduate student</small>
+                            <small class="scholarship-badge">DOST-SEI Scholar 2025</small>
                         </div>
                     </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-number">02</div>
-                        <div class="project-icon project-icon-hr" aria-hidden="true">
-                            <div class="hr-window-bar"><b>HR System</b><span>Employees</span><span>Loan</span><span>Payroll</span><span>Reports</span></div>
-                            <div class="hr-window-body">
-                                <div class="hr-departments"><strong>Departments</strong><i class="active"></i><i></i><i></i><i></i><i></i></div>
-                                <div class="hr-table-preview">
-                                    <div class="hr-table-search"><i></i><b>Search employee</b></div>
-                                    <div class="hr-table-row head"><i></i><i></i><i></i><i></i></div>
-                                    <div class="hr-table-row"><i></i><i></i><i></i><i></i></div>
-                                    <div class="hr-table-row"><i></i><i></i><i></i><i></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card-copy">
-                            <span class="project-type">HR administration application</span>
-                            <h3>HR System</h3>
-                            <p>An administration dashboard for managing employee records and departments, with tools for employee management, loans, payroll, reports, search, editing, and deletion.</p>
-                            <ul class="project-tags"><li>PHP</li><li>MySQL</li><li>CRUD</li><li>Payroll</li><li>Reports</li></ul>
-                            <!-- Replace the repository name below if it differs. -->
-                            <a class="project-link" href="https://github.com/jazminlandicho137-oss/hr-system" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-number">03</div>
-                        <div class="project-icon project-icon-web" aria-hidden="true"><span></span><span></span><span></span></div>
-                        <div class="project-card-copy">
-                            <span class="project-type">Web application</span>
-                            <h3>Student Information System</h3>
-                            <p>A student directory that practices data entry, connected web forms, cloud data storage, and Supabase integration.</p>
-                            <ul class="project-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Supabase</li></ul>
-                            <!-- Replace the repository name below if it differs. -->
-                            <a class="project-link" href="https://github.com/jazminlandicho137-oss/student-information-system" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                    <article class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-label">Earlier education</span>
+                            <h4>Lipa Montessori School of Learnings Inc.</h4>
+                            <p>Senior High: STEM strand · Junior High: Consistent Honor Student</p>
+                            <small class="honor-badge">Graduated Salutatorian · Bulaklakan Elementary School</small>
                         </div>
                     </article>
                 </div>
+
+                <p class="education-note reveal">School has sharpened my ability to think critically, solve unfamiliar problems, work through challenges, and turn consistent practice into steady improvement.</p>
             </div>
         </section>
 
@@ -387,7 +470,7 @@
             <div class="shell">
                 <div class="contact-wrap reveal">
                     <div class="contact-copy">
-                        <p class="section-label">03 / Contact</p>
+                        <p class="section-label">06 / Contact</p>
                         <h2>Let’s create something<br><span>worth using.</span></h2>
                         <p>I’m open to internships, entry-level opportunities, collaborations, and conversations about software engineering and data analysis.</p>
                         <a class="email-highlight" href="mailto:jazminlandicho137@gmail.com">jazminlandicho137@gmail.com <span aria-hidden="true">↗</span></a>
@@ -404,15 +487,10 @@
                             <span><small>GitHub</small><strong>jazminlandicho137-oss</strong></span>
                             <i aria-hidden="true">↗</i>
                         </a>
-                        <a href="https://www.facebook.com/jazmin.landicho.2025" target="_blank" rel="noopener">
-                            <span class="contact-platform facebook">f</span>
-                            <span><small>Facebook</small><strong>jazmin.landicho.2025</strong></span>
-                            <i aria-hidden="true">↗</i>
-                        </a>
-                        <a href="tel:09653345005">
-                            <span class="contact-platform phone">☎</span>
-                            <span><small>Contact Number</small><strong>09653345005</strong></span>
-                            <i aria-hidden="true">↗</i>
+                        <a href="assets/Jazmin-Landicho-Resume.pdf" download>
+                            <span class="contact-platform resume-icon">CV</span>
+                            <span><small>Résumé</small><strong>Download PDF</strong></span>
+                            <i aria-hidden="true">↓</i>
                         </a>
                     </div>
                 </div>
@@ -448,7 +526,7 @@
             <div class="message bot-message">
                 <span class="message-avatar">F</span>
                 <div>
-                    <p>Hi! I’m Fayri. Ask me about Jazmin’s skills, leadership experience, or how to get in touch.</p>
+                    <p>Hi! I’m Fayri. Ask about Jazmin’s skills, projects, leadership experience, or how to get in touch.</p>
                     <time>Now</time>
                 </div>
             </div>
@@ -456,6 +534,8 @@
 
         <div class="chat-prompts" aria-label="Suggested questions">
             <button type="button" data-question="What are your strongest skills?">Strongest skills</button>
+            <button type="button" data-question="See Jazmin's projects">See projects</button>
+            <button type="button" data-question="Download resume">Download résumé</button>
             <button type="button" data-question="What leadership experiences do you have?">Leadership</button>
             <button type="button" data-question="What are some of your experience in Leadership?">Leadership details</button>
             <button type="button" data-question="How can I contact you?">Contact</button>

@@ -1,0 +1,132 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 5473 >>
+stream
+0.420 0.190 0.580 rg
+BT /F2 22 Tf 1 0 0 1 52 748.0 Tm (JAZMIN LANDICHO) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 12 Tf 1 0 0 1 52 723.0 Tm (Computer Science Student | Web & Data-Driven Applications) Tj ET
+0.350 0.280 0.400 rg
+BT /F1 9 Tf 1 0 0 1 52 708.0 Tm (jazminlandicho137@gmail.com | linkedin.com/in/jazmin-landicho-863a3b435) Tj ET
+0.350 0.280 0.400 rg
+BT /F1 9 Tf 1 0 0 1 52 698.0 Tm (github.com/jazminlandicho137-oss) Tj ET
+0.420 0.190 0.580 rg
+BT /F2 11 Tf 1 0 0 1 52 674.0 Tm (PROFILE) Tj ET
+0.780 0.720 0.800 rg
+BT /F1 8 Tf 1 0 0 1 52 658.0 Tm (----------------------------------------------------------------------------------------) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 10 Tf 1 0 0 1 52 646.0 Tm (Second-year Computer Science undergraduate at Lipa City Colleges and DOST-SEI Scholar 2025.) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 10 Tf 1 0 0 1 52 634.0 Tm (Builds web and data-driven applications with PHP, MySQL, JavaScript, and Supabase.) Tj ET
+0.420 0.190 0.580 rg
+BT /F2 11 Tf 1 0 0 1 52 611.0 Tm (PROJECTS) Tj ET
+0.780 0.720 0.800 rg
+BT /F1 8 Tf 1 0 0 1 52 595.0 Tm (----------------------------------------------------------------------------------------) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 583.0 Tm (Student Early Warning System - PHP, MySQL) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 572.0 Tm (Built student registration, data intake, attendance tracking, and grade-based risk) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 562.0 Tm (scoring. Calculates risk levels to produce a prioritized review list for early) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 552.0 Tm (intervention.) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 542.0 Tm (HR System - PHP, MySQL) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 531.0 Tm (Developed an administration dashboard for employee records, departments, loans, payroll,) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 521.0 Tm (reports, search, editing, and deletion. Centralizes records into searchable CRUD) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 511.0 Tm (workflows.) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 501.0 Tm (Student Information System - JavaScript, Supabase) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 490.0 Tm (Built a browser form and connected student directory. Stores student records in the) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 480.0 Tm (cloud and displays them from a connected database.) Tj ET
+0.420 0.190 0.580 rg
+BT /F2 11 Tf 1 0 0 1 52 459.0 Tm (SKILLS) Tj ET
+0.780 0.720 0.800 rg
+BT /F1 8 Tf 1 0 0 1 52 443.0 Tm (----------------------------------------------------------------------------------------) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 10 Tf 1 0 0 1 52 431.0 Tm (Languages: Python, JavaScript, PHP, HTML, CSS) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 10 Tf 1 0 0 1 52 419.0 Tm (Databases: SQL / MySQL, Supabase) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 10 Tf 1 0 0 1 52 407.0 Tm (Tools & Practice: Git, GitHub, responsive design, problem solving) Tj ET
+0.420 0.190 0.580 rg
+BT /F2 11 Tf 1 0 0 1 52 384.0 Tm (EDUCATION) Tj ET
+0.780 0.720 0.800 rg
+BT /F1 8 Tf 1 0 0 1 52 368.0 Tm (----------------------------------------------------------------------------------------) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 356.0 Tm (Bachelor of Science in Computer Science) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 345.0 Tm (Lipa City Colleges, College of Computing and Technology Engineering. Second-year) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 335.0 Tm (undergraduate student.) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 325.0 Tm (Earlier Education) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 314.0 Tm (Lipa Montessori School of Learnings Inc. - STEM strand; Consistent Honor Student.) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 304.0 Tm (Graduated Salutatorian at Bulaklakan Elementary School.) Tj ET
+0.420 0.190 0.580 rg
+BT /F2 11 Tf 1 0 0 1 52 283.0 Tm (LEADERSHIP) Tj ET
+0.780 0.720 0.800 rg
+BT /F1 8 Tf 1 0 0 1 52 267.0 Tm (----------------------------------------------------------------------------------------) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 255.0 Tm (Vice President of Internal Affairs) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 244.0 Tm (Computing Development and Engineering Society - LCC) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 234.0 Tm (Former Roles) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 223.0 Tm (President and Vice President of Academics Club; SPG Vice President and Public) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 213.0 Tm (Information Officer; Class Vice President and Class Secretary.) Tj ET
+0.160 0.120 0.200 rg
+BT /F2 10 Tf 1 0 0 1 52 203.0 Tm (i-Leap Program - Torres Technology Center Corp.) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 192.0 Tm (Business Operations Simulation Champion; Best Booth Presentation and Prototype; Above) Tj ET
+0.340 0.280 0.380 rg
+BT /F1 9 Tf 1 0 0 1 52 182.0 Tm (and Beyond Award.) Tj ET
+0.420 0.190 0.580 rg
+BT /F2 11 Tf 1 0 0 1 52 161.0 Tm (ACTIVITIES) Tj ET
+0.780 0.720 0.800 rg
+BT /F1 8 Tf 1 0 0 1 52 145.0 Tm (----------------------------------------------------------------------------------------) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 9 Tf 1 0 0 1 52 133.0 Tm (Asian Math Sci League Inc. - Mathematics Enrichment Program, Top 1 student) Tj ET
+0.160 0.120 0.200 rg
+BT /F1 9 Tf 1 0 0 1 52 123.0 Tm (MTAP-DepEd Math Challenge - Multiple awardee for seven years) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000327 00000 n 
+0000000402 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+5927
+%%EOF

@@ -1,10 +1,10 @@
 :root {
     color-scheme: light;
-    --bg: #fbf7fc;
-    --bg-pattern: rgba(83, 39, 111, 0.045);
+    --bg: #faf3fc;
+    --bg-pattern: rgba(104, 54, 138, 0.055);
     --surface: #ffffff;
-    --surface-soft: #f4edf7;
-    --surface-tint: #f7eaf3;
+    --surface-soft: #f6edf8;
+    --surface-tint: #f8e8f3;
     --text: #25182d;
     --text-soft: #4a3953;
     --muted: #74667c;
@@ -159,12 +159,12 @@ main,
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
     background-size: 180px 180px;
-    opacity: 0.2;
+    opacity: 0.26;
     mix-blend-mode: soft-light;
 }
 
 html[data-theme="dark"] .ambient-texture {
-    opacity: 0.12;
+    opacity: 0.14;
 }
 
 html[data-theme="dark"] .ambient-orb-one,
@@ -2284,13 +2284,15 @@ html[data-theme="dark"] {
 
 body {
     background-image:
-        radial-gradient(circle at 14% 3%, rgba(211, 63, 153, 0.05), transparent 25%),
-        radial-gradient(rgba(83, 39, 111, 0.03) 1px, transparent 1px);
+        radial-gradient(circle at 12% 4%, rgba(233, 87, 155, 0.16), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(123, 63, 163, 0.13), transparent 32%),
+        radial-gradient(rgba(104, 54, 138, 0.045) 1px, transparent 1px);
+    background-size: auto, auto, 28px 28px;
 }
 
 .ambient-orb {
     filter: blur(105px);
-    opacity: 0.08;
+    opacity: 0.15;
 }
 
 .ambient-orb-one {
@@ -2302,13 +2304,17 @@ body {
 }
 
 .ambient-grid {
-    background-size: 32px 32px;
-    opacity: 0.09;
+    background-image:
+        radial-gradient(circle at 20% 28%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 28%),
+        radial-gradient(circle at 82% 72%, color-mix(in srgb, var(--accent) 11%, transparent), transparent 30%),
+        radial-gradient(color-mix(in srgb, var(--primary) 28%, transparent) 1px, transparent 1px);
+    background-size: auto, auto, 34px 34px;
+    opacity: 0.55;
 }
 
 html[data-theme="dark"] .ambient-orb,
 html[data-theme="dark"] .ambient-grid {
-    opacity: 0.1;
+    opacity: 0.12;
 }
 
 .brand-mark,
@@ -2566,6 +2572,267 @@ html[data-theme="dark"] .chat-form button {
 html[data-theme="dark"] .chat-form button:hover {
     background: var(--primary-strong);
     color: #24102f;
+}
+
+/* Evidence-led portfolio refinements */
+.button-secondary svg {
+    width: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
+.capability-panel {
+    margin-bottom: 14px;
+    padding: 12px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+}
+
+.capability-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 7px;
+    padding-inline: 4px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+}
+
+.capability-heading b {
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+}
+
+.capability-row {
+    display: grid;
+    grid-template-columns: 27px 1fr auto;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 7px;
+    border-top: 1px solid var(--border);
+}
+
+.capability-row > i {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    font-style: normal;
+}
+
+.capability-row > span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.capability-row strong {
+    color: var(--text);
+    font-size: 0.98rem;
+}
+
+.capability-row small {
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.capability-row > b {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.capability-row:hover strong,
+.capability-row:hover > b {
+    color: var(--primary);
+}
+
+.tech-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.tech-ribbon .tech-logo {
+    width: 16px;
+    height: 16px;
+}
+
+.skills-section,
+.education-section {
+    background: color-mix(in srgb, var(--surface) 72%, transparent);
+    border-block: 1px solid var(--border);
+}
+
+.section-intro {
+    max-width: 680px;
+    margin: 22px 0 0;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.evidence-skills {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.skill-heading-icon {
+    width: auto !important;
+    min-width: 42px;
+    color: var(--primary) !important;
+    background: color-mix(in srgb, var(--primary) 9%, transparent) !important;
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.skill-evidence-list {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 9px;
+}
+
+.skill-evidence-list li {
+    position: relative;
+    min-height: 74px;
+    align-items: center;
+    padding: 10px !important;
+    font-family: var(--font-sans);
+}
+
+.skill-evidence-list li > span:nth-child(2) {
+    min-width: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.skill-evidence-list strong {
+    padding-right: 62px;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.skill-evidence-list small {
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.skill-level {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 6px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-style: normal;
+}
+
+.icon-data {
+    background: linear-gradient(145deg, #8d7bc4, #5c4e9e);
+}
+
+.icon-problem {
+    background: linear-gradient(145deg, #e9579b, #8f2f67);
+}
+
+.project-card {
+    scroll-margin-top: 110px;
+    min-height: 615px;
+}
+
+.project-card p {
+    font-size: 1.02rem;
+    line-height: 1.72;
+}
+
+.project-result {
+    padding: 11px 12px;
+    color: var(--text-soft) !important;
+    background: color-mix(in srgb, var(--primary) 6%, var(--surface-soft));
+    border: 1px solid color-mix(in srgb, var(--primary) 16%, var(--border));
+    border-radius: 9px;
+}
+
+.project-result span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-tags a {
+    color: inherit;
+}
+
+.project-tags a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.award-outcome {
+    margin: 20px 0 0;
+    padding-top: 17px;
+    border-top: 1px solid var(--border);
+    font-size: 0.94rem !important;
+}
+
+.scholarship-badge {
+    display: inline-flex !important;
+    margin: 8px 0 0 7px !important;
+    color: var(--primary) !important;
+    font-family: var(--font-mono);
+    font-size: 0.84rem !important;
+}
+
+.timeline-item .scholarship-badge + .honor-badge,
+.timeline-content .scholarship-badge:not(:first-of-type) {
+    margin-left: 0;
+}
+
+.education-note {
+    max-width: 780px;
+    margin: 24px 0 0;
+    color: var(--muted);
+    font-size: 1.06rem;
+    line-height: 1.8;
+}
+
+.contact-platform.resume-icon {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.chat-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 6px 9px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+    border-radius: 7px;
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+.chat-action:hover {
+    background: color-mix(in srgb, var(--primary) 14%, transparent);
 }
 
 /* Responsive */
